@@ -28,9 +28,10 @@
 
 
 ## Steps Before Installation
+
 ```bash
 --Make a mysql database in your localhost and create a database named "silicon_orchard"
-
+```
 ## Installation
 
 ```bash
