@@ -44,5 +44,19 @@ $ npm install
 
 # run command
 $ npm run start:dev
+```
+## View API Endpoint & Make Request
+```bash
+open browser and visit this url - localhost:4000/api
+```
 
+## How You Can Use
+```bash
+register with user/registerUser
+login with user/getUserDetails -- you will receive a jwtToken copy it to use all other API and you have to provide this in header to request below API
+Add products to database wth products/createNewProduct
+You can see product with products/getProducts and products/getProductsById
+Add product to cart with cart/addToCart
+Remove product from cart with cart/removeFromCart
+You can see your added items to your cart with cart/getCart
 
