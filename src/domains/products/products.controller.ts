@@ -2,15 +2,15 @@ import { CreateProductsRequest } from './requests/CreateProductsRequest';
 import { ProductByIdRequest } from './requests/ProductByIdRequest';
 import { SuccessResponse } from '../../models/SuccessResponse';
 import { ProductsService } from './products.service';
-import { Body, Controller, Get, Post, Res, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Res } from '@nestjs/common';
 import { ApiTags, ApiHeader, ApiResponse } from '@nestjs/swagger';
 import { GetProductsRequest } from './requests/GetProductsRequest';
 
 @Controller('products')
-@ApiHeader({ name: 'jwtTokenHeader' })
 export class ProductsController {
     constructor( private  productsService: ProductsService){}
 
+    @ApiHeader({ name: 'jwtTokenHeader' })
     @Post('createNewProduct')
     @ApiResponse({ status: 201, description: 'Save new product' })
     async createNewProduct( @Body() request: CreateProductsRequest, @Res() response){

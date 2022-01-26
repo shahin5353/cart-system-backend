@@ -45,7 +45,9 @@ export class AppModule implements NestModule{
         .apply(JWTAuthorizationMiddleware, DBAuthorizationMiddleware)
         .exclude(
           { path: 'api/v1/user/getUserDetails', method: RequestMethod.POST},
-          { path: 'api/v1/user/registerUser', method: RequestMethod.POST}
+          { path: 'api/v1/user/registerUser', method: RequestMethod.POST},
+          { path: 'api/v1/products/getProducts', method: RequestMethod.POST},
+          { path: 'api/v1/products/getProductById', method: RequestMethod.POST}
         )
         .forRoutes('*');
   }

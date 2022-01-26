@@ -11,6 +11,7 @@ export class ProductsRepository extends Repository<Products> {
         newProduct['name'] = request.name;
         newProduct['price'] = request.price;
         newProduct['description'] = request.description;
+        newProduct['image'] = request.image;
         let saveProduct: Products = await this.save(newProduct);
 
         return saveProduct;
@@ -21,11 +22,6 @@ export class ProductsRepository extends Repository<Products> {
         let product: Products = await this.findOne({ where: { id: id } });
         return product;
     }
-
-    // public getBloodSamplesByCrossId = async (crossId:number) => {
-    //     let BloodSamples: BloodSamples = await this.findOne({where:{crossId:crossId}, withDeleted:true});
-    //     return BloodSamples;
-    // }
 
     public getProducts = async (request: GetProductsRequest) => {
         let products: Products[] = await this.find({ order: { createdDate: 'DESC' } });

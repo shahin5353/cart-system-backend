@@ -15,6 +15,10 @@ export class Products extends BaseDatabaseEntity{
 
     @ApiModelProperty()
     @Column({nullable:true})
+    image: string
+
+    @ApiModelProperty()
+    @Column({nullable:true})
     description:string;
 
 }

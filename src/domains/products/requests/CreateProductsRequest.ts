@@ -24,6 +24,17 @@ export class CreateProductsRequest {
     price: number;
 
     @ApiModelProperty()
+    @IsNotEmpty()
+    @IsString()
+    @MaxLength(240, {
+        message: 'Image link is too long. Maximum length is $constraint1 characters',
+    })
+    @MinLength(5, {
+        message: 'Image link is too short. Minimum length is $constraint1 characters',
+    })
+    image: string;
+
+    @ApiModelProperty()
     @IsOptional()
     @IsString()
     @MaxLength(120, {
