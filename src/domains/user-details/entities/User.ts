@@ -1,6 +1,6 @@
 import { Cart } from './../../cart/entities/Cart';
 import { BaseDatabaseEntity } from 'src/models/BaseDatabaseEntity';
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, OneToOne } from 'typeorm';
+import { Entity, Column, OneToOne } from 'typeorm';
 
 
 //Database Object Model for "USER" Table

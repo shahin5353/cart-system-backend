@@ -22,8 +22,8 @@ import { CartModule } from './domains/cart/cart.module';
           password: configService.get('DB_PASSWORD'),
           database: configService.get('DB_NAME'),
           entities: [__dirname + '/**/entities/*{.ts,.js}'],
-          synchronize: false,
-          migrationsRun: true
+          synchronize: true,
+          migrationsRun: false
       }),
       inject: [ConfigService]
   }),

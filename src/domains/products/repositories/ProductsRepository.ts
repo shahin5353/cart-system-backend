@@ -24,7 +24,7 @@ export class ProductsRepository extends Repository<Products> {
     }
 
     public getProducts = async (request: GetProductsRequest) => {
-        let products: Products[] = await this.find({ order: { createdDate: 'DESC' } });
+        let products: Products[] = await this.find();
         return products;
     }
 
