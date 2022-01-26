@@ -1,6 +1,5 @@
 import { INestApplication } from "@nestjs/common";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
-import basicAuth from 'express-basic-auth';
 
 
 // Swagger used for Graphical Interface of API and interact with all request like postman 
