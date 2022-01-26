@@ -8,6 +8,7 @@ import { Injectable } from '@nestjs/common';
 import { AddToCartRequest } from './requests/AddToCartRequets';
 import CommonException from 'src/models/CommonException';
 import { Products } from '../products/entities/Products';
+import { Cart } from './entities/Cart';
 
 @Injectable()
 export class CartService {
@@ -45,6 +46,13 @@ export class CartService {
             }))
         }
         return Result.success(cart);
+    }
+
+    async resetCart(request: GetCartRequest): Promise<Result> {
+        let cart:Cart = await this.cartRepository.getCart(request);
+        if(!cart) throw new CommonException(ErrorCodes.CART_NOT_FOUND)
+        let resetCart = await this.cartRepository.resetCart(cart);
+        return Result.success(resetCart);
     }
 
 }

@@ -31,4 +31,11 @@ export class CartController {
         const result = await this.cartService.getCart(request);
         response.json(new SuccessResponse(result.getValue()));
     }
+
+    @Post('resetCart')
+    @ApiResponse({ status: 201, description: 'Reset cart' })
+    async resetCart( @Body() request: GetCartRequest, @Res() response){
+        const result = await this.cartService.resetCart(request);
+        response.json(new SuccessResponse(result.getValue()));
+    }
 }

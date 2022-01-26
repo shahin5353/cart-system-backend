@@ -71,4 +71,9 @@ export class CartRepository extends Repository<Cart> {
         return cart;
     }
 
+    public resetCart = async (cart) => {
+        let deleteCart = await this.remove(cart);
+        return deleteCart;
+    }
+
 }

@@ -13,6 +13,8 @@ export default class ErrorMessages {
                 return 'Unauthorized access';
             case ErrorCodes.USER_ALREADY_EXISTS_WITH_MAIL:
                 return 'User already exists with this email';
+            case ErrorCodes.CART_NOT_FOUND:
+                return 'Cart not found';
             default:
                 return 'something went wrong';
         }
